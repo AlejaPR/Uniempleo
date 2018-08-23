@@ -1,0 +1,6 @@
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\bin\Debug\Utilitarios.dll
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\bin\Debug\Utilitarios.pdb
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.csprojAssemblyReference.cache
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.csproj.CoreCompileInputs.cache
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.dll
+D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.pdb

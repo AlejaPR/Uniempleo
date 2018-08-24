@@ -23,7 +23,7 @@ public partial class view_HojaEmpresa : System.Web.UI.Page
     protected void BTN_agregarE_Click(object sender, EventArgs e)
     {
         String control = DateTime.Now.ToString("dd/MM/yyyy");
-        if (DateTime.Parse(TB_fechaC.Text) < DateTime.Parse(control))
+        if (DateTime.Parse(TB_fechaC.Text) > DateTime.Parse(control))
         {
             L_ErrorCEmpresa.Text = "No puede seleeccionar una fecha mayor a la actual";
         }

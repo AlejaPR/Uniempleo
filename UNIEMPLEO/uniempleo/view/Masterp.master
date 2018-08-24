@@ -1,0 +1,176 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/controller/Masterp.master.cs" Inherits="views_Masterp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            text-align: center;
+            font-family: "MALgun Gothic";
+            font-size: xx-large;
+            color: #1BA39C;
+            background-color: #9ED8CB;
+        }
+        .nuevoEstilo1 {
+            font-family: "MALgun Gothic";
+            width: 67%;
+        }
+        .auto-style3 {
+            height: 32px;
+            background-color: #1BA39C;
+        }
+        .auto-style4 {
+            background-color: #9ED8CB;
+            width: 33%;
+            text-align: center;
+        }
+        .nuevoEstilo2 {
+            font-family: "MALgun Gothic";
+            background-color: #34495E;
+        }
+        .auto-style8 {
+            margin-left: 8px;
+        }
+        .auto-style9 {}
+        .auto-style10 {
+            color: #A2DED0;
+        }
+        .auto-style11 {
+            text-align: left;
+        }
+        .auto-style12 {}
+        .nuevoEstilo3 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style13 {
+            font-family: "malgun Gothic";
+            color: #34485D;
+            font-size: medium;
+        }
+        .nuevoEstilo4 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style14 {
+            font-family: "malgun Gothic";
+            color: #34495E;
+        }
+        .nuevoEstilo5 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style19 {
+            background-color: #A2DED0;
+            text-align: center;
+            width: 33%;
+        }
+        .auto-style25 {
+            background-color: #A2DED0;
+            text-align: center;
+            width: 33%;
+        }
+        .auto-style26 {
+            background-color: #A2DED0;
+            text-align: center;
+            width: 33%;
+        }
+        .auto-style28 {
+            background-color: #34495E;
+        }
+        .auto-style30 {
+            background-color: #E4F1FE;
+        }
+        .auto-style31 {
+            font-size: xx-large;
+        }
+        .auto-style31 {
+            font-family: "malgun Gothic";
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style4">
+                    <asp:Image ID="Image6" runat="server" Height="119px" ImageUrl="~/imagenes/maletin.png" Width="127px" />
+                </td>
+                <td class="auto-style2" colspan="3"><strong><em>UNIEMPLEO</em></strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="4">
+                    <strong>
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#3B4654" CssClass="auto-style31" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#1BA39C" Height="42px" Orientation="Horizontal" StaticSubMenuIndent="10px" Width="100%" OnMenuItemClick="Menu1_MenuItemClick">
+                        <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#B5C7DE" />
+                        <DynamicSelectedStyle BackColor="#507CD1" />
+                        <Items>
+                            <asp:MenuItem Text="UNIEMPLEO" Value="Uniempleo" NavigateUrl="~/view/Principal.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="QUIENES SOMOS" Value="Quienes somos">
+                                <asp:MenuItem Text="MISION" Value="Misión" NavigateUrl="~/view/Mision.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="VISION" Value="Visión" NavigateUrl="~/view/Vision.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="PQR" Value="PQR" NavigateUrl="~/view/PQR.aspx"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#507CD1" />
+                    </asp:Menu>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style30" colspan="4">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style26" colspan="2">
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style11" Height="92px" ImageUrl="~/imagenes/casa.png" Width="94px" />
+                    <br />
+                    <br />
+                    <span class="auto-style13"><strong>Postulate al trabajo de tus sueños</strong></span></td>
+                <td class="auto-style19">
+                    <asp:Image ID="Image4" runat="server" ImageUrl="~/imagenes/empresa.png" />
+                    <br />
+                    <br />
+                    <span class="auto-style14"><strong>Aqui estan las empresas mas reconocidas a nivel nacional</strong></span></td>
+                <td class="auto-style25">
+                    <asp:Image ID="Image5" runat="server" CssClass="auto-style12" Height="79px" ImageUrl="~/imagenes/bombillo.png" Width="74px" />
+                    <br />
+                    <br />
+                    <span class="auto-style14"><strong>Adquiere puntos por tu gran desempeño laboral</strong></span><br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style28" colspan="4"><span class="auto-style10"><strong>Contacto: Uniempleo_@gmail.com</strong></span><strong><br />
+                    </strong>&nbsp;<strong><br />
+                    <asp:Image ID="Image1" runat="server" CssClass="auto-style8" Height="22px" ImageUrl="~/imagenes/Facebook.png" Width="27px" />
+&nbsp; </strong><span class="auto-style10"><strong>uniempleo<br />
+                    <asp:Image ID="Image2" runat="server" CssClass="auto-style9" Height="41px" ImageUrl="~/imagenes/gmail.png" Width="39px" />
+&nbsp;uniempleo@gmail.com //</strong></span><br />
+                </td>
+            </tr>
+        </table>
+    <div>
+    </div>
+    </form>
+</body>
+</html>

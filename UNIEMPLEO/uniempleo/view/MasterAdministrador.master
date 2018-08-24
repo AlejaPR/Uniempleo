@@ -1,0 +1,285 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/controller/MasterAdministrador.master.cs" Inherits="view_MasterAdministrador" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            font-family: "MALgun Gothic";
+            font-size: xx-large;
+            color: #000000;
+            background-color: #D64541;
+            height: 49px;
+            width: 476px;
+        }
+        .nuevoEstilo1 {
+            font-family: "MALgun Gothic";
+            width: 67%;
+        }
+        .auto-style3 {
+            height: 32px;
+            background-color: #F2C1C3;
+        }
+        .auto-style4 {
+            background-color: #D64541;
+            width: 33%;
+            text-align: center;
+        }
+        .nuevoEstilo2 {
+            font-family: "MALgun Gothic";
+            background-color: #34495E;
+        }
+        .auto-style8 {
+            margin-left: 8px;
+        }
+        .auto-style9 {}
+        .auto-style10 {
+            color: #A2DED0;
+        }
+        .auto-style11 {
+            text-align: left;
+        }
+        .auto-style12 {}
+        .nuevoEstilo3 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style13 {
+            font-family: "malgun Gothic";
+            color: #000000;
+            font-size: medium;
+        }
+        .nuevoEstilo4 {
+            font-family: "malgun Gothic";
+        }
+        .nuevoEstilo5 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style28 {
+            background-color: #34495E;
+        }
+        .auto-style30 {
+            background-color: #F2C1C3;
+        }
+        .auto-style31 {
+            background-color: #D64541;
+            width: 33%;
+            text-align: center;
+            height: 49px;
+        }
+        .nuevoEstilo6 {
+            font-family: "malgun Gothic";
+        }
+        .nuevoEstilo7 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style32 {
+            color: #FFFFFF;
+        }
+        .auto-style33 {
+            font-family: "malgun Gothic";
+            color: #FFFFFF;
+        }
+        .auto-style34 {
+            font-family: "malgun Gothic";
+            color: #000000;
+        }
+        .auto-style35 {
+            height: 32px;
+            background-color: #F2C1C3;
+            text-align: center;
+        }
+        .nuevoEstilo8 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style36 {
+            font-family: "malgun Gothic";
+            font-weight: bold;
+        }
+        .nuevoEstilo9 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style37 {
+            font-family: "malgun Gothic";
+            font-weight: bold;
+            background-color: #D64541;
+        }
+        .nuevoEstilo10 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style38 {
+            background-color: #D64541;
+            width: 33%;
+            text-align: center;
+            height: 25px;
+        }
+        .auto-style39 {
+            text-align: center;
+            font-family: "MALgun Gothic";
+            font-size: xx-large;
+            color: #000000;
+            background-color: #D64541;
+            height: 25px;
+        }
+        .nuevoEstilo11 {
+            font-family: "malgun Gothic";
+        }
+        .nuevoEstilo12 {
+            font-family: "malgun Gothic";
+        }
+        .nuevoEstilo13 {
+            font-family: "malgun Gothic";
+        }
+        .auto-style42 {
+            font-family: "MALgun Gothic";
+            font-size: xx-large;
+            color: #000000;
+            background-color: #D64541;
+            height: 49px;
+            text-align: center;
+        }
+        .auto-style43 {
+            height: 14px;
+            background-color: #F2C1C3;
+            text-align: center;
+        }
+        .auto-style44 {
+            text-align: center;
+            font-family: "MALgun Gothic";
+            font-size: xx-large;
+            color: #000000;
+            background-color: #D64541;
+            height: 25px;
+            width: 476px;
+        }
+        .auto-style45 {
+            font-size: x-large;
+        }
+        .auto-style46 {
+            font-family: "malgun Gothic";
+            font-weight: bold;
+            font-size: medium;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style31">
+                    <asp:Image ID="Image6" runat="server" Height="106px" ImageUrl="~/imagenes/maletinNEGRO.png" Width="113px" />
+                </td>
+                <td class="auto-style2" colspan="2"><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style45">ADMINISTRADOR UNIEMPLEO</span><br />
+                    <br />
+                    </em></strong></td>
+                <td class="auto-style42" colspan="2">
+                    <asp:Image ID="Image7" runat="server" Height="63px" ImageUrl="~/imagenes/ENGRANAJE.png" Width="67px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style38">
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="41px" ImageUrl="~/imagenes/inicio.png" OnClick="ImageButton1_Click" Width="39px" />
+                </td>
+                <td class="auto-style44" colspan="2"><strong>
+                    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </em></strong></td>
+                <td class="auto-style39" colspan="2"><strong>
+                    <em>
+                    <span class="auto-style46">Salir<br />
+                    </span>
+                    <asp:ImageButton ID="ImageButton2" runat="server" Height="72px" ImageUrl="~/imagenes/salir.png" OnClick="ImageButton2_Click" Width="52px" />
+                    </em></strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style35" colspan="2">
+                    <br />
+                    <asp:Button ID="bt_ver_asp" runat="server" Text="Ver Aspirantes" BorderColor="#D64541" BorderStyle="Double" CssClass="auto-style37" OnClick="bt_ver_asp_Click1" Height="36px" Width="146px" />
+                    <br />
+                    <br />
+                </td>
+                <td class="auto-style30" colspan="3" rowspan="7">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style43" colspan="2">
+                    <br />
+                    <asp:Button ID="bt_ver_emp" runat="server" Text="Ver Empresas" BackColor="#D54541" BorderColor="#D64541" BorderStyle="Double" CssClass="auto-style36" OnClick="bt_ver_emp_Click" Width="147px" Height="33px" />
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style35" colspan="2">
+                    <strong>
+                    <br />
+                    <asp:Button ID="bt_admi" runat="server" BackColor="#D64541" BorderColor="#D64541" BorderStyle="Double" CssClass="auto-style36" OnClick="bt_admi_Click" Text="Administrador" Height="30px" Width="140px" />
+                    <br />
+                    </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style35" colspan="2">
+                    <br />
+                    <asp:Button ID="bt_reportes" runat="server" BorderColor="#D24440" BorderStyle="Double" CssClass="auto-style37" Text="Reportes" OnClick="bt_reportes_Click" Height="29px" Width="147px" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style30" colspan="2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4" colspan="2">
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style11" Height="92px" ImageUrl="~/imagenes/casa.png" Width="94px" />
+                    <br />
+                    <br />
+                    <span class="auto-style13"><strong>Postulate al trabajo de tus sueño</strong></span></td>
+                <td class="auto-style4" colspan="2">
+                    <asp:Image ID="Image4" runat="server" ImageUrl="~/imagenes/empresa.png" />
+                    <br />
+                    <br />
+                    <span class="auto-style34"><strong>Aqui estan las empresas mas reconocidas a nivel nacional</strong></span></td>
+                <td class="auto-style4">
+                    <asp:Image ID="Image5" runat="server" CssClass="auto-style12" Height="79px" ImageUrl="~/imagenes/bombillo.png" Width="74px" />
+                    <br />
+                    <br />
+                    <span class="auto-style34"><strong>Adquiere puntos por tu gran desempeño laboral</strong></span><br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style28" colspan="5"><span class="auto-style33"><strong>Contacto: Uniempleo_@gmail.com</strong></span><strong><br />
+                    </strong>&nbsp;<strong><br />
+                    <asp:Image ID="Image1" runat="server" CssClass="auto-style8" Height="22px" ImageUrl="~/imagenes/Facebook.png" Width="27px" />
+&nbsp; <span class="nuevoEstilo7"><span class="auto-style32">uniempleo</span><br />
+                    </span><span class="auto-style10">
+                    <asp:Image ID="Image2" runat="server" CssClass="auto-style9" Height="41px" ImageUrl="~/imagenes/gmail.png" Width="39px" />
+                    </span><span class="nuevoEstilo7">&nbsp;<span class="auto-style32">uniempleo@gmail.com //</span></span></strong><br />
+                </td>
+            </tr>
+        </table>
+    <div>
+    </div>
+    </form>
+</body>
+</html>
+
+

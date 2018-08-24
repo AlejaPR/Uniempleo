@@ -1,0 +1,250 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/controller/MasterAspirante.master.cs" Inherits="view_MasterAspirante" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style3 {
+            background-color: #013243;
+        }
+        .auto-style4 {
+            background-color: #C8ECF4;
+            text-align: center;
+        }
+        .nuevoEstilo1 {
+            font-family: "MALgun Gothic";
+        }
+        .auto-style5 {
+            font-size: xx-large;
+        }
+        .auto-style6 {
+            text-align: center;
+            background-color: #6F9FED;
+        }
+        .auto-style7 {
+            font-size: xx-large;
+            color: #0066FF;
+        }
+        .auto-style10 {
+            width: 30%;
+            background-color: #6F9FED;
+            text-align: center;
+        }
+        .auto-style12 {
+            text-align: center;
+            width: 268435344px;
+            background-color: #013243;
+            color: #6C9BE7;
+        }
+        .nuevoEstilo2 {
+            font-family: "MALgun Gothic";
+        }
+        .MA {
+            font-family: "MALgun Gothic";
+        }
+        .nuevoEstilo3 {
+            font-family: "MALgun Gothic";
+        }
+        .auto-style15 {
+            font-family: "MALgun Gothic";
+            color: #6C9BE7;
+            background-color: #013243;
+        }
+        .auto-style16 {
+            color: #6C9BE7;
+        }
+        .auto-style17 {
+            background-color: #013243;
+            color: #6C9BE7;
+        }
+        .auto-style18 {
+            font-size: x-large;
+        }
+        .auto-style13 {
+            font-family: "malgun Gothic";
+            color: #34485D;
+            font-size: medium;
+        }
+        .auto-style14 {
+            font-family: "malgun Gothic";
+            color: #34495E;
+        }
+        .nuevoEstilo4 {
+            font-family: "MALgun Gothic";
+        }
+        .auto-style19 {
+            font-family: "MALgun Gothic";
+            font-size: medium;
+            font-weight: bold;
+            color: #112437;
+        }
+        .auto-style20 {
+            background-color: #C8ECF4;
+            text-align: center;
+            width: 30%;
+        }
+        .auto-style23 {
+            background-color: #C8ECF4;
+            text-align: center;
+            width: 30%;
+            height: 31px;
+        }
+        .auto-style24 {
+            text-align: right;
+            background-color: #6F9FED;
+        }
+        .auto-style25 {
+            text-align: center;
+            background-color: #6F9FED;
+            width: 554px;
+            height: 95px;
+        }
+        .auto-style26 {
+            text-align: center;
+            background-color: #6F9FED;
+            height: 95px;
+        }
+        .auto-style36 {
+            font-size: medium;
+            color: #000000;
+        }
+        .nuevoEstilo5 {
+            font-family: "MALGUn Gothic";
+        }
+        .auto-style37 {
+            font-family: "MALGUn Gothic";
+            font-weight: bold;
+            font-size: medium;
+            background-color: #6793DB;
+        }
+        .labelhojallena {
+            font-family: "malgun Gothic";
+            font-size: small;
+            font-weight: bold;
+        }
+        .auto-style38 {
+            font-family: "malgun Gothic";
+            font-size: small;
+            font-weight: bold;
+            color: #6F9FED;
+        }
+        .auto-style39 {
+            width: 50%;
+            background-color: #6F9FED;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style39" colspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="133px" ImageUrl="~/imagenes/maletin.png" Width="154px" />
+                </td>
+                <td class="auto-style25"><span class="nuevoEstilo1"><span class="auto-style7"><strong>UNIEMPLEO</strong></span><br class="auto-style5" />
+                    </span></td>
+                <td class="auto-style26">
+                    <asp:Image ID="Image8" runat="server" Height="77px" ImageUrl="~/imagenes/masterAspirante.png" Width="93px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style39" colspan="2">
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="40px" ImageUrl="~/imagenes/inicio.png" OnClick="ImageButton1_Click" Width="45px" />
+                </td>
+                <td class="auto-style24">
+                    <strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </strong></td>
+                <td class="auto-style6">
+                    <strong>
+                    <span class="auto-style36">Salir<br />
+                    </span>
+                    <asp:ImageButton ID="ImageButton2" runat="server" Height="72px" ImageUrl="~/imagenes/salir.png" OnClick="ImageButton2_Click" Width="52px" />
+            </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style20"><strong>
+                    <br />
+                    <asp:Button ID="bt_hoja" runat="server" BackColor="#6F9FED" BorderColor="#6F9FED" BorderStyle="Double" CssClass="auto-style19"  Text="HOJA DE VIDA" OnClick="bt_hoja_Click" Height="40px" Width="223px" />
+                    <br />
+                    </strong>
+                    <asp:Label ID="LB_HojaAspLlena" runat="server" CssClass="auto-style38"></asp:Label>
+                </td>
+                <td class="auto-style4" colspan="3" rowspan="5">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style20">
+                    <br />
+                    <asp:Button ID="BT_verofertas" runat="server" BackColor="#C8ECF4" BorderColor="#C8ECF4" BorderStyle="Double" Height="40px" OnClick="BT_verofertas_Click" style="font-weight: 700; font-size: medium; color: #112437; background-color: #6F9FED" Text="VER OFERTAS" Width="228px" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style20">
+                    <br />
+                    <asp:Button ID="BT_miperfil" runat="server" BackColor="#C8ECF4" BorderColor="#C8ECF4" BorderStyle="Double" Height="40px" OnClick="BT_miperfil_Click" style="font-weight: 700; font-size: medium; color: #112437; background-color: #6F9FED" Text="MI PERFIL" Width="232px" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style23">
+                    <br />
+                    <asp:Button ID="bt_modificar_hoja" runat="server" BorderColor="#6F9FED" BorderStyle="Double" CssClass="auto-style37" OnClick="bt_modificar_hoja_Click" Text="MODIFICAR HOJA DE VIDA" BackColor="#6F9FED" Height="40px" Width="234px" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style20">
+                    <strong>
+            &nbsp;
+            </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style39" colspan="2">
+                    <asp:Image ID="Image5" runat="server" ImageUrl="~/imagenes/empresa.png" />
+                    <br />
+                    <span class="auto-style13"><strong>Postulate al trabajo de tus sueñosmas reconocidas a nivel nacional</strong></span></td>
+                <td class="auto-style6" colspan="2">
+                    <asp:Image ID="Image7" runat="server" Height="82px" ImageUrl="~/imagenes/bombillo.png" Width="91px" />
+                    <br />
+                    <span class="auto-style14"><strong>Adquiere puntos por tu gran desempeño laboral</strong></span></td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="4"><span class="auto-style10"><strong><span class="auto-style15"><span class="auto-style18">Contacto: </span></span></strong></span><strong><br class="auto-style17" />
+                    </strong>&nbsp;<strong><br class="auto-style17" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style12" Height="22px" ImageUrl="~/imagenes/Facebook.png" Width="27px" />
+                    <span class="auto-style17">&nbsp; </span><span class="auto-style10"><span class="auto-style15">uniempleo</span></span><span class="MA"><br class="auto-style17" />
+                    </span><span class="auto-style10"><span class="auto-style3">&nbsp;<asp:Image ID="Image4" runat="server" CssClass="auto-style16" Height="40px" ImageUrl="~/imagenes/gmail.png" Width="37px" />
+                    </span></span><span class="nuevoEstilo3"><span class="auto-style16">uniempleo@gmail.com </span></span> </strong></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

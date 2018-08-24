@@ -27,6 +27,11 @@ public partial class view_VerPerfil : System.Web.UI.Page
         DL_perfil.DataSource = perfilp;
         DL_perfil.DataBind();
 
+
+        
+
+
+
         //GridView para los comentarios y puntos
 
         DataTable perfilgp = perfil.obtenerPuntos(perfilcompleto);

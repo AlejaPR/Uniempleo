@@ -202,11 +202,17 @@
             <br />
             <br />
             <span class="auto-style5">Tus citas:</span><br />
-            <asp:GridView ID="GV_MisCitasAsp" runat="server" HorizontalAlign="Center" DataSourceID="ODS_Miscitasaspi" EmptyDataText="No tienes citas pendientes">
+            <asp:GridView ID="GV_MisCitasAsp" runat="server" HorizontalAlign="Center" DataSourceID="ODS_Miscitasaspi" EmptyDataText="No tienes citas pendientes" DataKeyNames="id_cita">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" />
+                </Columns>
                 <HeaderStyle BackColor="#6F9FED" ForeColor="White" />
                 <RowStyle BackColor="White" />
             </asp:GridView>
-            <asp:ObjectDataSource ID="ODS_Miscitasaspi" runat="server" SelectMethod="VerMisCitasAsp" TypeName="DAspirantes">
+            <asp:ObjectDataSource ID="ODS_Miscitasaspi" runat="server" SelectMethod="VerMisCitasAsp" TypeName="DAspirantes" DeleteMethod="eliminarCita">
+                <DeleteParameters>
+                    <asp:Parameter Name="idc" Type="Int32" />
+                </DeleteParameters>
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="id" Type="Int32" />
                 </SelectParameters>

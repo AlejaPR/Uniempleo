@@ -358,4 +358,31 @@ public DataTable MostrarMensajes(Eofertas idempresa)
         }
         return datosE;
     }
+    public DataTable eliminarCita(Int32 idc) //Int32 _id_asp
+    {
+        DataTable perfil = new DataTable();
+        NpgsqlConnection conexion = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.f_eliminar_cita", conexion);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_id_c", NpgsqlDbType.Integer).Value = idc;
+
+            conexion.Open();
+            dataAdapter.Fill(perfil);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conexion != null)
+            {
+                conexion.Close();
+            }
+        }
+        return perfil;
+    }
 }

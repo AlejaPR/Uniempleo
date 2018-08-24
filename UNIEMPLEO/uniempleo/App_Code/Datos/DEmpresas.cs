@@ -338,4 +338,31 @@ public class DEmpresas
         }
         return perfil;
     }
+    public DataTable VerMisCitas(int ide)
+    {
+        DataTable datosE = new DataTable();
+        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.f_obtener_citas_empresa", conection);
+            dataAdapter.SelectCommand.Parameters.Add("_id_emp", NpgsqlDbType.Integer).Value = ide;
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            conection.Open();
+            dataAdapter.Fill(datosE);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conection != null)
+            {
+                conection.Close();
+            }
+        }
+        return datosE;
+    }
 }

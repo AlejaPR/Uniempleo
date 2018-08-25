@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/MasterEmpresa.master" AutoEventWireup="true" CodeFile="~/controller/GenerarCita.aspx.cs" Inherits="view_GenerarCita" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/view/MasterEmpresa.master" AutoEventWireup="true" CodeFile="~/controller/GenerarCita.aspx.cs" Inherits="view_GenerarCita" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <SCRIPT language=Javascript>  
@@ -8,7 +8,7 @@
           var charCode = (evt.which) ? evt.which : event.keyCode;
 
    
-         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
 
     
             return true;
@@ -25,7 +25,7 @@
         var charCode = (evt.which) ? evt.which : event.keyCode;
 
       
-      if ((charCode > 47 && charCode < 58) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+      if ((charCode > 48 && charCode < 58))
 
                 
 	return true;
@@ -41,7 +41,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
             
-	if ((charCode > 47 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	if ((charCode > 48 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)))
 
   
               return true;
@@ -56,7 +56,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
            
-	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)))
 
                 
 	return true;
@@ -157,13 +157,15 @@
         <tr>
             <td class="auto-style43">Requisitos:</td>
             <td class="auto-style44">
-                <asp:TextBox ID="TB_Requisitos" runat="server" Height="40px" TextMode="MultiLine" Width="200px" Placeholder="Aquí puede agregar los requisitos para la entrevista de trabajo u objetos a llevar" onkeypress="return Letras(event)"></asp:TextBox>
+                <asp:TextBox ID="TB_Requisitos" runat="server" Height="40px" TextMode="MultiLine" Width="200px" Placeholder="Aqu� puede agregar los requisitos para la entrevista de trabajo u objetos a llevar" onkeypress="return Letras(event)"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style42">&nbsp;</td>
             <td>
-                <asp:Button ID="BT_CitarAsp" runat="server" BackColor="#7197D6" BorderColor="Black" BorderStyle="Double" CssClass="Boton" Height="35px" Text="CITAR" Width="140px" OnClick="BT_CitarAsp_Click" ValidationGroup="sincita" />
+                <asp:Button ID="BT_CitarAsp" runat="server" BackColor="#7197D6" BorderColor="Black" BorderStyle="Double" CssClass="Boton" Height="35px" Text="CITAR" Width="140px" OnClick="BT_CitarAsp_Click" ValidationGroup="sincita"/>
+                <br />
+                <asp:Label ID="LB_FechaCitaOcupada" runat="server" CssClass="auto-style47"></asp:Label>
             </td>
         </tr>
     </table>

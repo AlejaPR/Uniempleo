@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,24 +34,39 @@ public partial class view_GenerarCita : System.Web.UI.Page
         }
         else
         {
-            Dcitas DatosCita = new Dcitas();
-            Ecitas EncapCita = new Ecitas();
-            EncapCita.Idempresa = (int)Session["id"];
-            EncapCita.Idaspirante = Int32.Parse(Convert.ToString(Request.QueryString["valor"]));
-            EncapCita.Lugar = TB_LugarCita.Text;
-            EncapCita.Fecha1 = DateTime.Parse(TB_FechaCita.Text);
-            EncapCita.Hora1 = TimeSpan.Parse(TB_Hora.Text);
-            EncapCita.Descripcion = TB_Requisitos.Text;
-            EncapCita.Sesion = Session.SessionID;
-            DatosCita.GenerarCitas(EncapCita);
-            Page.Response.Write("<script language='JavaScript'>window.alert(' La persona ha sido citada para la entrevista de trabajo ');</script>");
-            Response.Redirect("VerAspirantes.aspx");
-        }
+            Ecitas Citaunica = new Ecitas();
+            Dcitas validaCitaUnica = new Dcitas();
+            Citaunica.Idaspirante = Int32.Parse(Convert.ToString(Request.QueryString["valor"]));
+            Citaunica.Idempresa = (int)Session["id"];
+            Citaunica.Fecha1 = DateTime.Parse(TB_FechaCita.Text);
+            Citaunica.Hora1 = TimeSpan.Parse(TB_Hora.Text);
+            DataTable ValidacionCita = validaCitaUnica.ValidaCitaReservas(Citaunica);
 
+            if (ValidacionCita.Rows.Count > 0)
+                {   
+                    LB_FechaCitaOcupada.Text = "Este horario ya está ocupado, por favor intenta con otro!";
+                }
+            else
+                {
+                Dcitas DatosCita = new Dcitas();
+                Ecitas EncapCita = new Ecitas();
+                EncapCita.Idempresa = (int)Session["id"];
+                EncapCita.Idaspirante = Int32.Parse(Convert.ToString(Request.QueryString["valor"]));
+                EncapCita.Lugar = TB_LugarCita.Text;
+                EncapCita.Fecha1 = DateTime.Parse(TB_FechaCita.Text);
+                EncapCita.Hora1 = TimeSpan.Parse(TB_Hora.Text);
+                EncapCita.Descripcion = TB_Requisitos.Text;
+                EncapCita.Sesion = Session.SessionID;
+                DatosCita.GenerarCitas(EncapCita);
+                Page.Response.Write("<script language='JavaScript'>window.alert(' La persona ha sido citada para la entrevista de trabajo exitosamente');</script>");
+                Response.Redirect("VerAspirantes.aspx");
+                }
+        }
     }
 
     protected void DDL_OfertaCita_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }
+
 }

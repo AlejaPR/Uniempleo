@@ -20,7 +20,9 @@ public class Ecitas
     private DateTime Fecha;
     private TimeSpan Hora;
     private String descripcion;
-    private String sesion; 
+    private String sesion;
+    private DateTime fechavalida;
+    private TimeSpan horavalida;
 
     public int Idempresa
     {
@@ -110,6 +112,32 @@ public class Ecitas
         set
         {
             sesion = value;
+        }
+    }
+
+    public DateTime Fechavalida
+    {
+        get
+        {
+            return fechavalida;
+        }
+
+        set
+        {
+            fechavalida = value;
+        }
+    }
+
+    public TimeSpan Horavalida
+    {
+        get
+        {
+            return horavalida;
+        }
+
+        set
+        {
+            horavalida = value;
         }
     }
 }

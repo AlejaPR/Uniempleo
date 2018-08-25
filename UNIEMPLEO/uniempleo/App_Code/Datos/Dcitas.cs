@@ -78,4 +78,35 @@ public class Dcitas
         }
         return perfil;
     }
+    public DataTable ValidaCitaReservas(Ecitas citica) //Int32 _id_asp
+    {
+        DataTable perfil = new DataTable();
+        NpgsqlConnection conexion = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
+
+        try
+        {
+            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.f_valida_citas_hechas", conexion);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dataAdapter.SelectCommand.Parameters.Add("_fecha", NpgsqlDbType.Date).Value = citica.Fecha1;
+            dataAdapter.SelectCommand.Parameters.Add("_hora", NpgsqlDbType.Time).Value = citica.Hora1;
+            dataAdapter.SelectCommand.Parameters.Add("_idaspirante", NpgsqlDbType.Integer).Value = citica.Idaspirante;
+            dataAdapter.SelectCommand.Parameters.Add("_idempresa", NpgsqlDbType.Integer).Value = citica.Idempresa;
+
+
+            conexion.Open();
+            dataAdapter.Fill(perfil);
+        }
+        catch (Exception Ex)
+        {
+            throw Ex;
+        }
+        finally
+        {
+            if (conexion != null)
+            {
+                conexion.Close();
+            }
+        }
+        return perfil;
+    }
 }

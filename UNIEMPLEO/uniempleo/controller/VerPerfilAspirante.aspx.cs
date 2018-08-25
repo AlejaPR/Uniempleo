@@ -69,4 +69,21 @@ public partial class view_VerPerfil : System.Web.UI.Page
     {
 
     }
+
+   
+
+    protected void Lb_cancelar_cita_Command(object sender, CommandEventArgs e)
+    {
+        if (e.CommandName.Equals("Eliminar"))
+        {
+            String ida = e.CommandArgument.ToString();
+            DAspirantes cancelar = new DAspirantes();
+            EAspirantes cosa = new EAspirantes();
+
+            cosa.IdAspirante = int.Parse(ida);
+            cancelar.eliminarCita(cosa);
+
+            Response.Redirect("VerPerfilAspirante.aspx");
+        }
+    }
 }

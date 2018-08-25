@@ -202,9 +202,13 @@
             <br />
             <br />
             <span class="auto-style5">Tus citas:</span><br />
-            <asp:GridView ID="GV_MisCitasAsp" runat="server" HorizontalAlign="Center" DataSourceID="ODS_Miscitasaspi" EmptyDataText="No tienes citas pendientes" DataKeyNames="id_cita">
+            <asp:GridView ID="GV_MisCitasAsp" runat="server" HorizontalAlign="Center" DataSourceID="ODS_Miscitasaspi" EmptyDataText="No tienes citas pendientes">
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" />
+                    <asp:TemplateField HeaderText="Cancelar cita" ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="Lb_cancelar_cita" runat="server" CausesValidation="False" CommandName="Eliminar" Text="Cancelar cita" CommandArgument='<%# Eval("id_cita") %>' OnCommand="Lb_cancelar_cita_Command" ></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <HeaderStyle BackColor="#6F9FED" ForeColor="White" />
                 <RowStyle BackColor="White" />

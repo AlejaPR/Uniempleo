@@ -12,41 +12,7 @@ public class DIDatos
         // TODO: Agregar aquí la lógica del constructor
         //
     }
-    public void Registro(EDatos ERegistroU)//
-    {
-        DataTable datosR = new DataTable();
-        NpgsqlConnection conectar = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.registro", conectar);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            
-            dataAdapter.SelectCommand.Parameters.Add("_correo", NpgsqlDbType.Text).Value = ERegistroU.Correo;
-            dataAdapter.SelectCommand.Parameters.Add("_usuario", NpgsqlDbType.Text).Value = ERegistroU.Usuario;
-            dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Text).Value = ERegistroU.Clave;
-            dataAdapter.SelectCommand.Parameters.Add("_rol", NpgsqlDbType.Integer).Value = ERegistroU.Rol;
-
-
-
-            conectar.Open();
-            dataAdapter.Fill(datosR);
-
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (ERegistroU != null)
-            {
-                conectar.Close();
-            }
-        }
-
-    }
+    
     public void Pqr(EDatos EPqrs)//
     {
         DataTable datosP = new DataTable();

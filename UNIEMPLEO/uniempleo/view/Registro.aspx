@@ -202,7 +202,6 @@
                 <br />
                 <asp:Button ID="btn_registrar" runat="server" BackColor="#2E9A95" BorderColor="#2E9A95" BorderStyle="Double" CssClass="auto-style36" ForeColor="White" Text="REGISTRAR" OnClick="btn_registrar_Click" Height="34px" Width="168px" ValidationGroup="registro" />
                 <br />
-                <asp:Label ID="L_registro" runat="server" ForeColor="#CC0000"></asp:Label>
                 </strong></td>
         </tr>
         <tr>

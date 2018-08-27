@@ -171,7 +171,7 @@ public class DUser
             NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("seguridad.f_guarda_sesion", conectar);
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-            dataAdapter.SelectCommand.Parameters.Add("_user_id", NpgsqlDbType.Integer).Value =datauser.Id;
+            dataAdapter.SelectCommand.Parameters.Add("_user_id", NpgsqlDbType.Integer).Value = datauser.Id;
             dataAdapter.SelectCommand.Parameters.Add("_ip", NpgsqlDbType.Varchar, 100).Value = datauser.Ip;
             dataAdapter.SelectCommand.Parameters.Add("_mac", NpgsqlDbType.Varchar, 100).Value = datauser.Mac;
             dataAdapter.SelectCommand.Parameters.Add("_session", NpgsqlDbType.Text).Value = datauser.Sesion1;
@@ -221,59 +221,5 @@ public class DUser
             }
         }
         return user;
-    }
-    public DataTable VerificaR(String correo)
-    {
-        DataTable datosE = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.f_verificar_correo_registro", conection);
-            dataAdapter.SelectCommand.Parameters.Add("_correo", NpgsqlDbType.Text).Value = correo;
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            conection.Open();
-            dataAdapter.Fill(datosE);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return datosE;
-    }
-    public DataTable VerificaU(String usuario)
-    {
-        DataTable datosE = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.f_verificar_usuario_registro", conection);
-            dataAdapter.SelectCommand.Parameters.Add("_usuario", NpgsqlDbType.Text).Value = usuario;
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            conection.Open();
-            dataAdapter.Fill(datosE);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return datosE;
     }
 }

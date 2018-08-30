@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utilitarios;
+using Logica;
 
 public partial class views_prueba : System.Web.UI.Page
 {
@@ -19,14 +21,13 @@ public partial class views_prueba : System.Web.UI.Page
 
     protected void bt_enviar_Click(object sender, EventArgs e)
     {
-        EDatos EPqr = new EDatos();
-        DIDatos pqr = new DIDatos();
-        EPqr.NombrePqr = tb_nombre.Text;
-        EPqr.CorreoPqr = tb_correo.Text;
-        EPqr.Asunto = tb_asunto.Text;
-        
+        UPrincipal envio    = new UPrincipal();
+        LPrincipal enviar = new LPrincipal();
 
-        pqr.Pqr(EPqr);
-        Response.Redirect("Principal.aspx");
+        envio = enviar.EnviarPqr(tb_nombre.Text.ToString(), tb_correo.Text.ToString(), tb_asunto.Text.ToString());
+
+
+
+        Response.Redirect(envio.Url);
     }
 }

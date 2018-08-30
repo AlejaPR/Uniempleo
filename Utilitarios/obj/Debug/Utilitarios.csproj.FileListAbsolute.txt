@@ -4,3 +4,13 @@ D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\o
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.csproj.CoreCompileInputs.cache
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.dll
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Utilitarios\obj\Debug\Utilitarios.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\Utilitarios.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\Utilitarios.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\obj\Debug\Utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\obj\Debug\Utilitarios.csproj.CoreCompileInputs.cache
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\obj\Debug\Utilitarios.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\obj\Debug\Utilitarios.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\Npgsql.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\Npgsql.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Utilitarios\bin\Debug\Npgsql.xml

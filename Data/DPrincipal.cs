@@ -94,9 +94,37 @@ namespace Data
             {
                 throw Ex;
             }
-            
+
             return datosR;
 
         }
-    }  
+        public DataTable Pqr(String Nombre, String Correop, String Asunto)//
+        {
+            DataTable datospqr = new DataTable();
+            NpgsqlConnection conectar = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("uniempleo.pqr", conectar);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                dataAdapter.SelectCommand.Parameters.Add("_nombrepqr", NpgsqlDbType.Text).Value = Nombre;
+                dataAdapter.SelectCommand.Parameters.Add("_correopqr", NpgsqlDbType.Text).Value = Correop;
+                dataAdapter.SelectCommand.Parameters.Add("_comentariopqr", NpgsqlDbType.Text).Value = Asunto;
+
+
+
+                conectar.Open();
+                dataAdapter.Fill(datospqr);
+
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+            return datospqr;
+        }
+
+    }
 }

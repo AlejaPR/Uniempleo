@@ -9,3 +9,13 @@ D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Logica\bin\De
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Logica\bin\Debug\Data.pdb
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Logica\bin\Debug\Utilitarios.pdb
 D:\Documentos\universidad\Septimo\Ingenieria Software II\Uniempleo\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Logica.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Logica.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Data.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Utilitarios.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Data.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\bin\Debug\Utilitarios.pdb
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\obj\Debug\Logica.dll
+C:\Users\NATHALY\Documents\UDEC\Septimo\Ingeniera Software 2\UNIEMPLEO\Uniempleo\Logica\obj\Debug\Logica.pdb

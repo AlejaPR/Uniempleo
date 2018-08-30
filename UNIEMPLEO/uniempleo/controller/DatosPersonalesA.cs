@@ -5,54 +5,63 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utilitarios;
+using Logica;
 
 public partial class view_hvaspirante1 : System.Web.UI.Page
 {
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["id"] == null || Session["nombre"] == null || Session["rol"] == null || (int)Session["rol"] !=2)
-        {
-            Session["id"] = null;
-            Session["nombre"] = null;
-            Session["rol"] = null;
-            Response.Redirect("Loggin.aspx");
-            Response.Cache.SetNoStore();
-        } 
+
+        int idUsuario = int.Parse(Session["id"].ToString());
+        String nombreUser = Session["nombre"].ToString();
+        int idRol = int.Parse(Session["rol"].ToString());
+
+        UAspirante validaLink = new UAspirante();
+        LAspirante llevaValidacion = new LAspirante();
+        validaLink.IdUser = idUsuario;
+        validaLink.UserName = nombreUser;
+        validaLink.RolId = idRol;
+        validaLink = llevaValidacion.ValidacionUrl(validaLink);
+
+        Session["id"] = validaLink.IdUser;
+        Session["nombre"] = validaLink.UserName;
+        Session["rol"] = validaLink.RolId;
+
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "invocarfuncion", validaLink.Url, false);
+        Page.ClientScript.RegisterStartupScript(Page.GetType(), "Message", validaLink.Url);
+        Response.Cache.SetNoStore();
     }
 
     protected void TB_Listo_Click(object sender, EventArgs e)
     {
         String control = DateTime.Now.ToString("dd/MM/yyyy");
-        if (DateTime.Parse(C_FechanacimientoA.Text) > DateTime.Parse(control))
-        {
-           L_ErrorCalendario.Text = "No puede seleeccionar una fecha anterior";
-        }
-        else
-        {
-            DIDatos registro1 = new DIDatos();
-            Euser enviarR1 = new Euser();
-            enviarR1.Id = (int)Session["id"];
-            enviarR1.Nombre = tb_nombre.Text;
-            enviarR1.Apellido = tb_apellido.Text;
-            enviarR1.Nacimiento = DateTime.Parse(C_FechanacimientoA.Text);
-            enviarR1.Direccion = TB_Direccion.Text;
-            enviarR1.Celular = TB_Celular.Text;
-            enviarR1.Documento = TB_Documento.Text;
-            enviarR1.Sexo = (DDL_Sexo.SelectedItem).ToString();
-            enviarR1.Estadocivil = (RBL_Estado.SelectedItem).ToString();
-            enviarR1.Foto = cargarimagen();
-            enviarR1.Sesion1 = Session.SessionID;
-            enviarR1.Estado = 1;
-            registro1.RegistraAspirante(enviarR1);
-            
-          
-            Response.Redirect("FormacionA.aspx");
+        UAspirante controla = new UAspirante();
+        LAspirante llevaHora = new LAspirante();
+        controla.ControlTime = DateTime.Parse(control);
+        controla.FechaNacimiento = DateTime.Parse(C_FechanacimientoA.Text);
 
-        }
-            
+        
 
+        controla.IdUser = (int)Session["id"];
+        controla.Nombre = tb_nombre.Text;
+        controla.Apellido = tb_apellido.Text;
+        controla.FechaNacimiento = DateTime.Parse(C_FechanacimientoA.Text);
+        controla.Direccion = TB_Direccion.Text;
+        controla.Celular = int.Parse(TB_Celular.Text);
+        controla.Documento = int.Parse(TB_Documento.Text);
+        controla.Sexo = (DDL_Sexo.SelectedItem).ToString();
+        controla.Estadocivil = (RBL_Estado.SelectedItem).ToString();
+        controla.Foto = cargarimagen();
+        controla.Sesion = Session.SessionID;
+        controla.Estado = 1;
+        controla = llevaHora.ValidacionHora(controla);
 
+        L_ErrorCalendario.Text = controla.Mensaje;
+        Response.Redirect(controla.Url);
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "invocarfuncion", controla.Url2, false);
+        Page.ClientScript.RegisterStartupScript(Page.GetType(), "Message", controla.Url2);
     }
 
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -81,7 +90,7 @@ public partial class view_hvaspirante1 : System.Web.UI.Page
 
 
         FU_Foto.PostedFile.SaveAs(saveLocation);
-        cd.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo de imagen ha sido cargado');</script>");
+        //cd.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo de imagen ha sido cargado');</script>");
 
         return "~\\fotos_usuarios" + "\\" + nombreArchivo;
     }

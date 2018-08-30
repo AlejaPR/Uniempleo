@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-
+using Logica;
+using Utilitarios;
 public partial class views_Loggin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -16,78 +17,24 @@ public partial class views_Loggin : System.Web.UI.Page
 
     protected void bt_ingresar_Click(object sender, EventArgs e)
     {
-        DUser datos = new DUser();
-        Euser usuario = new Euser();
-        usuario.UserName = tb_usuario.Text;
-        usuario.Clave = tb_clave.Text;
-        DataTable usuarios = datos.Login(usuario);
-        
 
-        if (usuarios.Rows.Count > 0)
+        ULogin llevaDatos = new ULogin();
+        LLogin llevaD = new LLogin();
+        llevaDatos.Username1 = tb_usuario.Text;
+        llevaDatos.Clave1 = tb_clave.Text;
+        llevaDatos = llevaD.Logear(llevaDatos, Session.SessionID);
 
-        {
-            if (int.Parse(usuarios.Rows[0]["estado"].ToString()) == 1)
-            {
-
-                if (int.Parse(usuarios.Rows[0]["id_registro"].ToString()) > 0)
-                {
-                    Session["id"] = Int32.Parse(usuarios.Rows[0]["id_registro"].ToString());
-                    Session["nombre"] = usuarios.Rows[0]["usuario"].ToString();
-                    Session["rol"] = Int32.Parse(usuarios.Rows[0]["id_rol"].ToString());
-                    Session["estado"] = usuarios.Rows[0]["estado"].ToString();
-                    Int32 rol = Int32.Parse(usuarios.Rows[0]["id_rol"].ToString());
-                    Euser datauser = new Euser();
-
-                    MAC datosConexion = new MAC();
-                    String ipAdress = datosConexion.ip();
-                    String mac = datosConexion.mac();
-
-                    datauser.Id = Int32.Parse(usuarios.Rows[0]["id_rol"].ToString());
-                    datauser.Ip = ipAdress;
-                    datauser.Mac = mac;
-                    datauser.Sesion1 = Session.SessionID;
-
-                    datos.GuardarSesion(datauser);
-                    if (rol == 1)
-                    {
-
-                        Response.Redirect("VerAspirantes.aspx");
-                    }
+        Session["id"] = llevaDatos.IdRegistro;
+        Session["nombre"] = llevaDatos.Nombre;
+        Session["rol"] = llevaDatos.IdRol;
+        Session["estado"] = llevaDatos.Estado;
 
 
-                    if (rol == 2)
-                    {
+        ScriptManager.RegisterStartupScript(this, typeof(Page), "invocarfuncion", llevaDatos.Script, false);
+        Page.ClientScript.RegisterStartupScript(Page.GetType(), "Message", llevaDatos.Script);
 
-                        Response.Redirect("VerOfertas.aspx");
-                    }
-
-
-                    if (rol == 3)
-                    {
-
-                        Response.Redirect("PrincipalAdmi.aspx");
-                    }
-
-
-
-                }
-
-            }
-            else {
-                L_error_sus.Text = " Usuario Suspendido ";
-
-
-
-            }
-        }
-
-
-        else
-        {
-                
-                L_Error.Text = "Usuario o clave incorrectos";
-       
-        }
+        L_Error.Text = llevaDatos.ErrorInicio;
+        L_error_sus.Text = llevaDatos.Script;
     }
     protected void LinkButton1_Click(object sender, EventArgs e)
     {

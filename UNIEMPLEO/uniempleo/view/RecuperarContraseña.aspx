@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/Masterp.master" AutoEventWireup="true" CodeFile="~/controller/RecuperarContraseña.aspx.cs" Inherits="views_RecuperarContraseña" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script type="text/javascript" src="js/Redirecciones.js"></script>
     <SCRIPT language=Javascript>  
         function Letras(evt) {
 
@@ -8,7 +9,7 @@
           var charCode = (evt.which) ? evt.which : event.keyCode;
 
    
-         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
 
     
             return true;
@@ -25,7 +26,7 @@
         var charCode = (evt.which) ? evt.which : event.keyCode;
 
       
-      if ((charCode > 47 && charCode < 58) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+      if ((charCode > 48 && charCode < 58))
 
                 
 	return true;
@@ -41,7 +42,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
             
-	if ((charCode > 47 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	if ((charCode > 48 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)))
 
   
               return true;
@@ -56,7 +57,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
            
-	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)))
 
                 
 	return true;

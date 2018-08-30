@@ -1,13 +1,27 @@
-﻿function Dire_expl() {
+﻿
+function Redir_InicioEmpresa()
+{
 
-    window.location.href = "ExperienciaL.aspx";
+        window.location.href = "VerAspirantes.aspx";
+}
+function Redir_InicioAspirante()
+{
 
+    window.location.href = "VerOfertas.aspx";
+}
+function Redir_InicioAdmin() {
 
+    window.location.href = "PrincipalAdmi.aspx";
+}
+function Redir_Login() {
+
+    window.location.href = "loggin.aspx";
+}
+function Redir_FormacionA()
+{
+    window.location.href = "FormacionA.aspx"
 }
 
-function Dire_log() {
 
 
-    window.location.href = "Loggin.aspx";
 
-}

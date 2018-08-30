@@ -8,7 +8,7 @@
           var charCode = (evt.which) ? evt.which : event.keyCode;
 
    
-         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+         if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
 
     
             return true;
@@ -25,7 +25,7 @@
         var charCode = (evt.which) ? evt.which : event.keyCode;
 
       
-      if ((charCode > 47 && charCode < 58) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+      if ((charCode > 48 && charCode < 58))
 
                 
 	return true;
@@ -41,7 +41,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
             
-	if ((charCode > 47 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	if ((charCode > 48 && charCode < 58) ||  ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)))
 
   
               return true;
@@ -56,7 +56,7 @@
 	var charCode = (evt.which) ? evt.which : event.keyCode;
 
            
-	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)) || (charCode < 33 && charCode > 31) || (charCode < 9 && charCode > 7))
+	 if ((charCode > 32 && charCode < 60) || ((charCode > 62 && charCode < 126)))
 
                 
 	return true;

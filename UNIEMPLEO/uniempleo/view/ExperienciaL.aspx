@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/MasterAspirante.master" AutoEventWireup="true" CodeFile="~/controller/ExperienciaL.aspx.cs" Inherits="view_ExperienciaL" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script type ="text/javascript" src ="js/Redirecciones.js"> </script>
     <SCRIPT language=Javascript>  
         function Letras(evt) {
 
